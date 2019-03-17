@@ -1,0 +1,54 @@
+uses crt,GraphABC;
+const
+speed=1;
+var i,pic,pik,j,h,w,t,d: integer;  a:char;
+begin
+LockDrawing;
+i:=200; d:=1;
+while((i>50) and (i<800)) do
+begin
+i:=i+d;
+setwindowsize(1280,1024);
+ClearWindow;
+line(0,300,1600,300);
+FloodFill(0,200,clMoneyGreen);
+FloodFill(400,500,clSilver);
+line(i+380,200,i+410,200);
+line(i+380,200,i+390,210);
+line(i+400,210,i+410,200);
+line(i+100,270,i+120,270);
+line(i+300,270,i+320,270);
+line(i+200,270,i+220,270);
+SetBrushColor(clred);
+Rectangle(i+20,230,i+100,280);
+Rectangle(i+120,230,i+200,280);
+Rectangle(i+220,230,i+300,280);
+SetBrushColor(clyellow);
+RoundRect(i+320,200,i+365,280,30,20);
+SetBrushColor(clSkyBlue);
+RoundRect(i+320,230,i+420,280,30,20);
+Rectangle(i+390,230,i+400,210);
+Rectangle(i+390,230,i+400,210);
+Rectangle(i+390,230,i+400,210);
+Rectangle(i+390,230,i+400,210);
+SetBrushColor(clyellow);
+circle(i+30,290,10);
+circle(i+90,290,10);
+circle(i+130,290,10);
+circle(i+190,290,10);
+circle(i+230,290,10);
+circle(i+230,290,10);
+circle(i+230,290,10);
+circle(i+230,290,10);
+circle(i+290,290,10);
+circle(i+345,278,22);
+circle(i+377,288,12);
+circle(i+400,288,12);
+if keypressed then
+ begin a:=readkey;  d:=-d;
+ if a=chr(32) then d:=d*2;
+ end;
+Redraw;
+
+end;
+end.

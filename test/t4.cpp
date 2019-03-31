@@ -1,4 +1,3 @@
-
 #include <iostream>
 #include <fstream>
 
@@ -12,7 +11,7 @@ int main()
 	const char ch = '\n';
 	char mass[len][strings];
 
-	ifstream fs("strings.txt", ios::in | ios::binary);
+	ifstream fs("output.txt", ios::in | ios::binary);
 
 	if(!fs) return 1; //Если ошибка открытия файла, то завершаем программу
 

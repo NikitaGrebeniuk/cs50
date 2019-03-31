@@ -9,7 +9,9 @@ typedef struct node
   struct node* next;
 } node;
 
+void push(node * head, int value);
 void printlist(node * head);
+void push_start(node ** head, int value);
 
 int main(void){
     node * head = NULL;
@@ -28,10 +30,38 @@ int main(void){
     head->next->next->next = NULL;
 
     printlist(head);
+    printf("------------\n");
+    push(head,4);
+    printlist(head);
+    printf("------------\n");
+    push_start(&head,0);
+    printlist(head);
 
     return 0;
 }
 
+void push(node * head, int value)
+{
+    node * current = head;
+    while(current ->next !=NULL){
+        current = current -> next;
+    }
+    current->next= malloc(sizeof(node));
+    current ->next ->value=value;
+    current->next->next=NULL;
+}
+//node ** head
+//double pointer передаем указатель на переменную указателя
+
+void push_start(node ** head, int value)
+{
+    node * new_node;
+    new_node = malloc(sizeof(node));
+
+    new_node->value=value;
+    new_node -> next=*head;
+    *head=new_node;
+}
 
 void printlist(node * head)
 {

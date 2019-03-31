@@ -1,6 +1,7 @@
-
+#include <stdio.h>
 #include <iostream> //Подключаем библиотеку, обрабатывающую
  //стандартные потоки ввода/вывода
+//#include <conio.h>
 
 
 const int ABCSize = 26; //Размер алфавита
@@ -57,10 +58,10 @@ std::cout << "If you want to cipher string, press \"1\", if you want to decode,"
  " press \"2\"";
 
 bool Ok = false; //Корректна ли нажатая клавиша
-int shift = //Величина сдвига
+int shift = 0; //Величина сдвига
 while(!Ok) //Пока не будет нажато "1" или "2"
  {
- switch(getch())
+ switch(getchar())
   {
   case '1': //Если нажато "1", шифруем строку
    {
@@ -85,7 +86,7 @@ while(!Ok) //Пока не будет нажато "1" или "2"
     std::cout << "\nWith shift equal " << i << " we have such string:\n";
     std::cout << cipher(s, i);
     std::cout << "\nIf decoding is done, press \"1\"";
-    if (getch() == '1') Done = true; //Строка дешифрована
+    if (getchar() == '1') Done = true; //Строка дешифрована
     }
    Ok = true; //Клавиша была нажата корректно
    } break;
@@ -93,5 +94,5 @@ while(!Ok) //Пока не будет нажато "1" или "2"
  //клавиша
   }
  }
-getch();
+getchar();
 }
